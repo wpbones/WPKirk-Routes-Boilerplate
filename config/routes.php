@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('ABSPATH')) {
-    exit();
+  exit();
 }
 
 /*
@@ -14,4 +14,12 @@ if (!defined('ABSPATH')) {
 |
 */
 
-return [];
+return [
+  'custom_page' => [
+    'title'      => 'Title of page',
+    'capability' => 'read',
+    'route'      => [
+      'get' => 'CustomPageController@customPage'
+    ]
+  ]
+];
