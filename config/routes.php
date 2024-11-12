@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
 
 return [
   'custom_page' => [
-    'title'      => 'Title of page',
+    'title'      => __('Title of the Page', 'wp-kirk'),
     'capability' => 'read',
     'route'      => [
       'get' => 'CustomPageController@customPage'

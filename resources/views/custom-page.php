@@ -28,7 +28,7 @@
     <?php wpkirk_section(__('Back to another view', 'wp-kirk')); ?>
 
     <?php wpkirk_code(
-      htmlentities('<a href="<?php echo $plugin->getMenuUrl(\'second_view\'); ?>">Go to another view</a>'),
+      htmlentities('<a href="<?php echo $plugin->getMenuUrl(\'second_view\'); ?>">Go to the second view</a>'),
     ); ?>
 
     <a href="<?php echo $plugin->getMenuUrl('second_view'); ?>">Go to the second view</a>
