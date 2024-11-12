@@ -7,67 +7,37 @@
  |
 -->
 
-<div class="wp-kirk wrap">
-  <h1><?php echo $plugin->Name; ?> boilerplate main view</h1>
+<?php ob_start() ?>
 
-  <h2>The menu configuration</h2>
-  <pre>
-    return [
-      'wp_kirk_slug_menu' => [
-        "page_title" => "WP Kirk Page",
-        "menu_title" => "WP Kirk Menu",
-        'capability' => 'read',
-        'icon' => 'wpbones-logo-menu.png',
-        'items' => [
-          [
-            "page_title" => "Main View",
-            "menu_title" => "Main View",
-            'capability' => 'read',
-            'route' => [
-              'get' => 'Dashboard\DashboardController@index'
-            ],
-          ],
-          // Here we're using a key to get the URL later
-          'second_view' => [
-            "page_title" => "Second View",
-            "menu_title" => "Second View",
-            'capability' => 'read',
-            'route' => [
-              'get' => 'Dashboard\DashboardController@second'
-            ],
-          ],
-          [
-            "page_title" => "Another Controller",
-            "menu_title" => "Another Controller",
-            'capability' => 'read',
-            'route' => [
-              'get' => 'AnotherController@index'
-            ],
-          ],
-        ]
-      ]
-    ];
-  </pre>
+<div class="wp-kirk wrap wp-kirk-sample">
 
-  <p>As you can see we used a key for the second view, so we can get the URL later.</p>
-  <p>By using <code>$plugin->getMenuUrl('second_view');</code> you can get the URL for the second view.</p>
+  <div class="wp-kirk-toc-content">
 
-  <h2>The controller</h2>
+    <?php wpkirk_section(__('Configuration Menus', 'wp-kirk')); ?>
 
-  <pre>
-    class DashboardController extends Controller
-    {
-      public function index()
-      {
-        return WPKirk()->view('dashboard.index');
-      }
-    }
-  </pre>
+    <?php wpkirk_code('@/config/menus.php'); ?>
 
-  <h2>Custom Page</h2>
-  <a href="<?php echo $plugin->getPageUrl('custom_page'); ?>">Go to custom page</a>
+    <p><?php _e('As you can see we used a key for the second view, so we can get the URL later.', 'wp-kirk'); ?></p>
+    <p><?php _e('By using', 'wp-kirk'); ?></p>
 
-  <pre>
-    $plugin->getPageUrl( 'custom_page');
-  </pre>
+    <?php wpkirk_code("\$plugin->getMenuUrl('second_view');") ?>
+
+    <p><?php _e('you can get the URL for the second view.', 'wp-kirk'); ?></p>
+
+    <?php wpkirk_section(__('Controller', 'wp-kirk')); ?>
+
+    <?php wpkirk_code('@/plugin/Http/Controllers/Dashboard/DashboardController.php'); ?>
+
+    <?php wpkirk_section(__('Custom Page', 'wp-kirk')); ?>
+
+    <?php wpkirk_code(
+      htmlentities('<a href="<?php echo $plugin->getPageUrl(\'custom_page\'); ?>">Go to custom page</a>')
+    ); ?>
+
+    <a href="<?php echo $plugin->getPageUrl('custom_page'); ?>">Go to custom page</a>
+
+  </div>
+
+  <?php wpkirk_toc('Routes') ?>
+
 </div>

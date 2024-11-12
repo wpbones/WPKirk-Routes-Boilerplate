@@ -7,18 +7,22 @@
  |
 -->
 
-<div class="wp-kirk wrap">
-  <h1><?php echo $plugin->Name; ?> boilerplate main view</h1>
+<?php ob_start() ?>
 
-  <h2>The controller</h2>
+<div class="wp-kirk wrap wp-kirk-sample">
 
-  <pre>
-    class AnotherController extends Controller
-    {
-      public function index()
-      {
-        return WPKirk()->view('another-view');
-      }
-    }
-  </pre>
+  <div class="wp-kirk-toc-content">
+
+    <?php wpkirk_section(__('Controller', 'wp-kirk')); ?>
+
+    <?php wpkirk_code('@/plugin/Http/Controllers/AnotherController.php'); ?>
+
+    <?php wpkirk_section(__('The View', 'wp-kirk')); ?>
+
+    <?php wpkirk_code('@/resources/views/another-view.php'); ?>
+
+  </div>
+
+  <?php wpkirk_toc('Routes') ?>
+
 </div>

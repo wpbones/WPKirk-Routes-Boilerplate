@@ -7,39 +7,33 @@
  |
 -->
 
-<div class="wp-kirk wrap">
-  <h1><?php echo $plugin->Name; ?> boilerplate main view</h1>
-  <h2>Custom Page</h2>
-  <p>In the <code>config/routes.php</code> file, you can add a custom page route like this:</p>
+<?php ob_start() ?>
 
-  <pre>
-    return [
-      'custom_page' => [
-        'title'      => 'Title of page',
-        'capability' => 'read',
-        'route'      => [
-          'get' => 'CustomPageController@customPage'
-        ]
-      ]
-    ];
-  </pre>
+<div class="wp-kirk wrap wp-kirk-sample">
 
-  <p>Then you can create a controller like this:</p>
+  <div class="wp-kirk-toc-content">
 
-  <pre>
-    class CustomPageController extends Controller
-    {
-      public function customPage()
-      {
-        return WPKirk()->view('custom-page');
-      }
-    }
-  </pre>
+    <?php wpkirk_section(__('Configuration', 'wp-kirk')); ?>
 
-  <h2>Back to the Second menu</h2>
-  <a href="<?php echo $plugin->getMenuUrl('second_view'); ?>">Go to the Second view in the menu</a>
+    <?php wpkirk_code('@/config/routes.php'); ?>
 
-  <pre>
-    $plugin->getMenuUrl('second_view')
-  </pre>
+    <?php wpkirk_section(__('Controller', 'wp-kirk')); ?>
+
+    <?php wpkirk_code('@/plugin/Http/Controllers/CustomPageController.php'); ?>
+
+    <?php wpkirk_section(__('The View', 'wp-kirk')); ?>
+
+    <?php wpkirk_code('@/resources/views/custom-page.php'); ?>
+
+    <?php wpkirk_section(__('Back to another view', 'wp-kirk')); ?>
+
+    <?php wpkirk_code(
+      htmlentities('<a href="<?php echo $plugin->getMenuUrl(\'second_view\'); ?>">Go to another view</a>'),
+    ); ?>
+
+    <a href="<?php echo $plugin->getMenuUrl('second_view'); ?>">Go to the second view</a>
+  </div>
+
+  <?php wpkirk_toc('Custom Pages') ?>
+
 </div>

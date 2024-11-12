@@ -12,6 +12,10 @@ class AnotherController extends Controller
 {
   public function index()
   {
-    return WPKirk()->view('another-view');
+    return WPKirk()
+    ->view('another-view')
+    ->withAdminStyle('prism')
+    ->withAdminScript('prism')
+    ->withAdminStyle('wp-kirk-common');
   }
 }

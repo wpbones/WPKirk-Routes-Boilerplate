@@ -12,6 +12,10 @@ class CustomPageController extends Controller
 {
   public function customPage()
   {
-    return WPKirk()->view('custom-page');
+    return WPKirk()
+    ->view('custom-page')
+    ->withAdminStyle('prism')
+    ->withAdminScript('prism')
+    ->withAdminStyle('wp-kirk-common');
   }
 }
