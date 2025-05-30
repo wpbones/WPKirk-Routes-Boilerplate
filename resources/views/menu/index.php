@@ -13,6 +13,14 @@
 
   <div class="wp-kirk-toc-content">
 
+    <?php wpkirk_section(__('Overview', 'wp-kirk')); ?>
+
+    <p>
+      <?php wpkirk_md(__('Below a schema about how the routing works in WP Bones, you can see how the routing is configured and how it works.', 'wp-kirk')); ?>
+    </p>
+
+    <img style="width: 90%;margin: 0 auto;display:block;border-radius:12px" src="<?php echo $plugin->images ?>/routing.png" alt="Routing Diagram" />
+
     <?php wpkirk_section(__('Configuration Menus', 'wp-kirk')); ?>
 
     <p>
