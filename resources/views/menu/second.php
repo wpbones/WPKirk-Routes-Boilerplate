@@ -16,21 +16,21 @@
     <?php wpkirk_section(__('Configuration Menus', 'wp-kirk')); ?>
 
     <p>
-      <?php wpkirk_md(__('Also this view is defined in `/config/menus.php`.', 'wp-kirk')); ?>
+      <?php wpkirk_md(__('This Second menu view is defined in `/config/menus.php`, like the first one.', 'wp-kirk')); ?>
     </p>
 
-    <?php wpkirk_code('@/config/menus.php', ['line-numbers' => true, 'line' => '54']); ?>
+    <?php wpkirk_code('@/config/menus.php', ['line-numbers' => true, 'line' => '46']); ?>
 
     <?php wpkirk_section(__('Controller', 'wp-kirk')); ?>
 
-    <?php wpkirk_code('@/plugin/Http/Controllers/AnotherController.php'); ?>
+    <?php wpkirk_code('@/plugin/Http/Controllers/MenuRouting/MenuRoutingController.php', ['line-numbers' => true, 'line' => '25']); ?>
 
     <?php wpkirk_section(__('The View', 'wp-kirk')); ?>
 
-    <?php wpkirk_code('@/resources/views/another-view.php'); ?>
+    <?php wpkirk_code('@/resources/views/menu/second.php'); ?>
 
   </div>
 
-  <?php wpkirk_toc('Routes') ?>
+  <?php wpkirk_toc('Menu Routes') ?>
 
 </div>

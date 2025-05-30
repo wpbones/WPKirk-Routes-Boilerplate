@@ -22,11 +22,19 @@ return [
     'icon' => 'wpbones-logo-menu.png',
     'items' => [
       [
-        "page_title" => __('Main View', 'wp-kirk'),
-        "menu_title" => __('Main View', 'wp-kirk'),
+        "page_title" => __('Menu Routing', 'wp-kirk'),
+        "menu_title" => __('Menu Routing', 'wp-kirk'),
         'capability' => 'read',
         'route' => [
-          'get' => 'Dashboard\DashboardController@index'
+          'get' => 'MenuRouting\MenuRoutingController@index'
+        ],
+      ],
+      [
+        "page_title" => __('Routes', 'wp-kirk'),
+        "menu_title" => __('Routes', 'wp-kirk'),
+        'capability' => 'read',
+        'route' => [
+          'get' => 'MenuRouting\MenuRoutingController@routes'
         ],
       ],
       // Here we're using a key to get the URL later
@@ -35,15 +43,23 @@ return [
         "menu_title" => __('Second View', 'wp-kirk'),
         'capability' => 'read',
         'route' => [
-          'get' => 'Dashboard\DashboardController@second'
+          'get' => 'MenuRouting\MenuRoutingController@second'
         ],
       ],
       [
-        "page_title" => __('Another View', 'wp-kirk'),
-        "menu_title" => __('Another View', 'wp-kirk'),
+        "page_title" => __('Another Menu View', 'wp-kirk'),
+        "menu_title" => __('Another Menu View', 'wp-kirk'),
         'capability' => 'read',
         'route' => [
           'get' => 'AnotherController@index'
+        ],
+      ],
+      [
+        "page_title" => __('Pages Folder', 'wp-kirk'),
+        "menu_title" => __('Pages Folder', 'wp-kirk'),
+        'capability' => 'read',
+        'route' => [
+          'get' => 'MenuRouting\MenuRoutingController@pages'
         ],
       ],
     ]
