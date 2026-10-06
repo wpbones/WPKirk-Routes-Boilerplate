@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
 return [
   'my_custom_page_route' => [
     'title'      => __('Title of the Page', 'wp-kirk'),
-    'capability' => 'read',
+    'capability' => 'manage_options',
     'route'      => [
       'get' => 'Routes\RoutesController@myRoute'
     ]

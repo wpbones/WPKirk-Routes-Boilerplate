@@ -25,6 +25,10 @@
       <?php wpkirk_md(__('The class name is not important. You can use any name you want. The most important thing is the name of the file. In this case, the file name is `MyCustomPage.php`. This means that the slug of the page will be the string lowercase of the filename: `mycustompage`.', 'wp-kirk')); ?>
     </p>
 
+    <p>
+      <?php wpkirk_md(__('The `capability()` method says who can open the page: a user without that capability gets a 403. Without the method, the page asks for `read`, which every logged-in user has.', 'wp-kirk')); ?>
+    </p>
+
 
     <?php wpkirk_section(__('Get the route Url', 'wp-kirk')); ?>
 
